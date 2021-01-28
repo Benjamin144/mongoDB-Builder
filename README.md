@@ -63,3 +63,17 @@ coll.remove({first: "kate", last: "bush"});
 
 Delete all records from the collection:
 coll.remove();
+
+Find all documents in collection:
+coll.find();
+Find all documents with gender == "f":
+coll.find({gender: "f"});
+Find all documents with gender == "f" AND nationality == "british":
+coll.find({gender: "f", nationality: "british"});
+Find all documents with gender == "f" AND nationality == "american" OR "irish":
+coll.find({gender: "f", $or: [{nationality: "american"}, {nationality: "irish"}]});
+Find all documents with gender == "f" AND nationality == "american" OR "irish", then sort by nationality (ascending):
+coll.find({gender: "f", $or: [{nationality: "american"}, {nationality: "irish"}]}).sort({nationality: 1});
+Find all documents with gender == "f" AND nationality == "american" OR "irish", then sort by nationality (descending):
+coll.find({gender: "f", $or: [{nationality: "american"}, {nationality: "irish"}]}).sort({nationality: -1});
+
