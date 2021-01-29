@@ -4,7 +4,7 @@ if os.path.exists("env.py"):
     import env
 
 
-MONGO_URI = os.environ.get("MONGO_URI")
+MONGO_URI = os.environ.get("MONGO_URI, mongodb://origin:tWist0faT4@myfirstcluster-shard-00-00.mu5yc.mongodb.net:27017,myfirstcluster-shard-00-01.mu5yc.mongodb.net:27017,myfirstcluster-shard-00-02.mu5yc.mongodb.net:27017/myFirstDB?ssl=true&replicaSet=atlas-yqdttl-shard-0&authSource=admin&retryWrites=true&w=majority")
 DATABASE = "myFirstDB"
 COLLECTION = "celebrities"
 
