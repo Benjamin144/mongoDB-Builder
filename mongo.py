@@ -4,7 +4,7 @@ if os.path.exists("env.py"):
     import env
 
 
-MONGO_URI = os.environ.get("MONGO_URI, mongodb://origin:tWist0faT4@myfirstcluster-shard-00-00.mu5yc.mongodb.net:27017,myfirstcluster-shard-00-01.mu5yc.mongodb.net:27017,myfirstcluster-shard-00-02.mu5yc.mongodb.net:27017/myFirstDB?ssl=true&replicaSet=atlas-yqdttl-shard-0&authSource=admin&retryWrites=true&w=majority")
+MONGO_URI = os.environ.get("MONGO_URI")
 DATABASE = "myFirstDB"
 COLLECTION = "celebrities"
 
@@ -15,7 +15,7 @@ def mongo_connect(url):
         print("Mongo is connected")
         return conn
     except pymongo.errors.ConnectionFailure as e:
-        print("Could not connect to MongoDB: %s") % e
+        print("Could not connect to MOngoDB: %s") % e
 
 
 conn = mongo_connect(MONGO_URI)
@@ -23,7 +23,6 @@ conn = mongo_connect(MONGO_URI)
 coll = conn[DATABASE][COLLECTION]
 
 documents = coll.find()
-
 
 for doc in documents:
     print(doc)
